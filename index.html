@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lawhil Memek</title>
+
+<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<style>
+
+body {
+    background: #05070d;
+    color: white;
+    font-family: "Trebuchet MS", sans-serif;
+    min-height: 100vh;
+    padding: 40px 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-x: hidden;
+    cursor: none;
+    margin: 0;
+}
+
+/* Particle Background */
+#tsparticles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.3), #000 80%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Cursor */
+.cursor {
+    position: fixed;
+    width: 18px;
+    height: 18px;
+    border: 2px solid white;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px rgba(255,255,255,0.8);
+    z-index: 999;
+    display: none;
+}
+
+/* Layout */
+.wrapper {
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-section {
+    text-align: center;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.content-section {
+    text-align: center;
+}
+
+.minecraft {
+    font-family: 'Minecraft', monospace;
+    font-size: 36px;
+    letter-spacing: 5px;
+    min-height: 50px;
+    margin-bottom: 20px;
+}
+
+.about {
+    font-size: 15px;
+    color: #bbb;
+    margin-bottom: 35px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    transform: scale(1.2);
+}
+
+.x-btn {
+    background: black;
+    color: white;
+    border: 1px solid white;
+}
+.x-btn:hover { box-shadow: 0 0 20px white; }
+
+.ig-btn {
+    background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+    color: white;
+}
+.ig-btn:hover { box-shadow: 0 0 20px #dd2a7b; }
+
+.sp-btn {
+    background: #1DB954;
+    color: black;
+}
+.sp-btn:hover { box-shadow: 0 0 20px #1DB954; }
+
+footer {
+    position: fixed;
+    bottom: 15px;
+    font-size: 13px;
+    color: #777;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Laptop Mode */
+@media (min-width: 768px) {
+
+    .wrapper {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .profile-section {
+        flex: 1;
+        text-align: right;
+    }
+
+    .content-section {
+        flex: 1;
+        text-align: left;
+    }
+
+    .minecraft {
+        font-size: 52px;
+    }
+
+    .about {
+        font-size: 17px;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="tsparticles"></div>
+<div class="cursor"></div>
+
+<div class="wrapper">
+
+    <div class="profile-section">
+        <!-- FOTO DARI GITHUB RAW -->
+        <img src="https://raw.githubusercontent.com/Alvin-2304/lohil/refs/heads/main/IMG_20260212_124140.jpg" class="profile-img">
+    </div>
+
+    <div class="content-section">
+        <h1 class="minecraft" id="typingName"></h1>
+        <p class="about">Selamat datang, para manusia bedebah</p>
+
+        <div class="social-links">
+            <a href="https://twitter.com/alpin_anaknana" target="_blank" class="social-btn x-btn">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="https://www.instagram.com/alvinprrtma" target="_blank" class="social-btn ig-btn">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://open.spotify.com/user/31kjstz562dlpxis4kodj4xijp54/" target="_blank" class="social-btn sp-btn">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © Alvin Pratama — All rights reserved.
+</footer>
+
+<script>
+
+/* PARTICLES */
+tsParticles.load("tsparticles", {
+    background: { color: "#05070d" },
+    particles: {
+        number: { value: 60 },
+        color: { value: ["#8ab4f8", "#b22222"] },
+        size: { value: { min: 1, max: 2 } },
+        move: { enable: true, speed: 0.3 },
+        opacity: { value: 0.6 }
+    }
+});
+
+/* Cursor */
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", e => {
+    cursor.style.display = "block";
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+
+document.addEventListener("touchstart", () => {
+    cursor.style.display = "block";
+});
+
+document.addEventListener("touchmove", e => {
+    const touch = e.touches[0];
+    cursor.style.left = touch.clientX + "px";
+    cursor.style.top = touch.clientY + "px";
+});
+
+document.addEventListener("touchend", () => {
+    cursor.style.display = "none";
+});
+
+/* Minecraft Typing Loop */
+const text = "Lawhil Memek";
+const speed = 150;
+let index = 0;
+
+function typeLoop() {
+    const element = document.getElementById("typingName");
+
+    if (index < text.length) {
+        element.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeLoop, speed);
+    } else {
+        setTimeout(() => {
+            element.innerHTML = "";
+            index = 0;
+            typeLoop();
+        }, 1000);
+    }
+}
+
+typeLoop();
+
+</script>
+
+</body>
+</html>
